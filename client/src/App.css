@@ -1,0 +1,185 @@
+:root {
+  --base-background: rgb(12, 12, 12);
+  --base-color: rgb(170, 170, 170);
+  --border: 1px solid rgb(47, 47, 58);
+}
+
+body {
+  max-width: 1000px;
+  padding: 40px 20px;
+  background: var(--base-background);
+  color: var(--base-color);
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+input {
+  border: 0;
+  border-radius: 20px;
+  padding: 6px 12px;
+  background: rgb(32, 33, 39);
+  color: rgb(114, 123, 150);
+}
+
+button {
+  outline: 0;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+/* Word bundle form */
+
+.wbf {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  border: var(--border);
+  border-radius: 0 14px 14px 14px;
+  padding: 18px;
+  background: rgb(14, 15, 17);
+  color: rgb(100, 100, 100);
+}
+
+@media only screen and (max-width: 700px) {
+  .wbf {
+    flex-direction: column;
+  }
+
+  .wbf-main {
+    margin-right: 0 !important;
+    margin-bottom: 18px;
+  }
+}
+
+.wbf-leaf {
+  border: 1px solid transparent;
+  border-bottom: 0 !important;
+  border-radius: 14px 14px 0 0;
+  padding: 10px 14px;
+  background: transparent;
+  color: rgb(109, 108, 139);
+  font-size: 16px;
+}
+
+.wbf-leaf:hover {
+  cursor: pointer;
+  color: rgb(108, 106, 158);
+  text-decoration: underline;
+}
+
+.wbf-leaf.active {
+  border: var(--border);
+  background: rgb(19, 19, 24);
+}
+
+.wbf-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+.wbf-label {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 350px;
+  margin-bottom: 14px;
+}
+
+.wbf-label > *:not(:last-child) {
+  margin-right: 12px;
+}
+
+.wbf-preview {
+  min-width: 0;
+  flex: 1;
+  border: var(--border);
+  border-radius: 4px;
+  padding: 14px;
+  background: var(--base-background);
+}
+
+.wbf-submit {
+  border: 2px solid rgb(46, 52, 85);
+  border-radius: 8px;
+  padding: 4px 10px;
+  background: transparent;
+  color: rgb(67, 77, 131);
+}
+
+.wbf-submit:hover {
+  cursor: pointer;
+  border: 2px solid rgb(62, 81, 105);
+  color: rgb(81, 114, 153);
+}
+
+/* Word bundle */
+
+.wb-title {
+  color: rgb(120, 89, 128);
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+  overflow: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wb-content {
+  margin-top: 8px;
+  margin-left: 14px;
+}
+
+.wb-content > *:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.wb-row {
+  display: flex;
+  line-height: 18px;
+}
+
+.wb-row > *:not(:last-child) {
+  margin-right: 6px;
+}
+
+.wb-word {
+  max-width: calc(100% - 30px);
+  color: rgb(107, 109, 136);
+  font-size: 16px;
+  vertical-align: middle;
+  overflow: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wb-word:hover {
+  cursor: pointer;
+  color: rgb(202, 154, 121);
+  text-shadow: 0 0 2px rgb(255, 95, 188), 0 0 10px rgb(177, 89, 140);
+}
+
+.icon-check {
+  color: rgba(86, 151, 160, 0);
+  font-size: 18px;
+  transition: color 100ms ease-in;
+}
+
+.icon-check.fadeOut {
+  color: rgba(86, 151, 160, 0);
+}
+
+.icon-check.fadeIn {
+  color: rgb(86, 151, 160) !important;
+}
+
+/* Independent entities */
+
+.truncate {
+  overflow: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
