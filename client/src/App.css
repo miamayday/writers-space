@@ -13,14 +13,6 @@ body {
   font-size: 14px;
 }
 
-input {
-  border: 0;
-  border-radius: 20px;
-  padding: 6px 12px;
-  background: rgb(32, 33, 39);
-  color: rgb(114, 123, 150);
-}
-
 button {
   outline: 0;
 }
@@ -93,6 +85,14 @@ button::-moz-focus-inner {
   margin-right: 12px;
 }
 
+.wbf-label input {
+  border: 0;
+  border-radius: 20px;
+  padding: 6px 12px;
+  background: rgb(32, 33, 39);
+  color: rgb(114, 123, 150);
+}
+
 .wbf-preview {
   min-width: 0;
   flex: 1;
@@ -139,15 +139,53 @@ button::-moz-focus-inner {
 
 .wb-row {
   display: flex;
+  align-items: center;
   line-height: 18px;
 }
 
-.wb-row > *:not(:last-child) {
-  margin-right: 6px;
+.wb-row:hover .wb-word.edit {
+  max-width: calc(100% - 60px);
+  margin-right: 16px;
+  /*color: rgb(160, 118, 79);
+  text-shadow: 0 0 2px rgb(184, 44, 142), 0 0 10px rgb(177, 89, 140);*/
+}
+
+.wb-row:hover .icon,
+.wb-row.active .icon {
+  display: inline-block !important;
+}
+
+.wb-row:hover .icon.edit,
+.wb-row.active .icon.edit {
+  margin-right: 8px;
+}
+
+.wb-row input {
+  border: 0;
+  border-bottom: var(--border);
+  padding: 4px 8px;
+  background: transparent;
+  color: rgb(79, 86, 105);
+}
+
+.wb-input {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.wb-input .input-icon {
+  margin-left: 8px;
+  color: rgb(61, 62, 73);
+  font-size: 12px;
+}
+
+.wb-input .input-icon:hover {
+  cursor: pointer;
+  color: rgb(80, 90, 146);
 }
 
 .wb-word {
-  max-width: calc(100% - 30px);
   color: rgb(107, 109, 136);
   font-size: 16px;
   vertical-align: middle;
@@ -156,10 +194,29 @@ button::-moz-focus-inner {
   text-overflow: ellipsis;
 }
 
-.wb-word:hover {
+.wb-word.view:hover {
   cursor: pointer;
   color: rgb(202, 154, 121);
   text-shadow: 0 0 2px rgb(255, 95, 188), 0 0 10px rgb(177, 89, 140);
+}
+
+.icon {
+  display: none;
+  color: rgb(61, 62, 73);
+  font-size: 18px;
+  transition: color 100ms ease-in;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.icon.edit:hover {
+  color: rgb(58, 131, 113);
+}
+
+.icon.delete:hover {
+  color: rgb(153, 66, 66);
 }
 
 .icon-check {
